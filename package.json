@@ -1,0 +1,33 @@
+{
+  "name": "ghost-hunter",
+  "version": "0.0.0",
+  "description": "Find unused files using a sourcemap",
+  "bin": {
+    "ghost-hunter": "./index.js"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && tape 'test.js' | faucet",
+    "cover": "nyc --reporter=html npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erickmerchant/ghost-hunter.git"
+  },
+  "keywords": [],
+  "author": "Erick Merchant <erickmerchant@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "glob": "^7.1.1",
+    "sergeant": "^14.0.0",
+    "thenify": "^3.2.0"
+  },
+  "devDependencies": {
+    "faucet": "0.0.1",
+    "mockery": "^2.0.0",
+    "nyc": "^10.0.0",
+    "standard": "^8.0.0",
+    "tape": "^4.6.0"
+  }
+}
