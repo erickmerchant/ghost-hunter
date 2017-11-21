@@ -1,6 +1,6 @@
 {
   "name": "ghost-hunter",
-  "version": "2.0.17",
+  "version": "2.0.18",
   "description": "Find unused files using a sourcemap",
   "bin": {
     "ghost-hunter": "./index.js"
