@@ -20,7 +20,7 @@
   "dependencies": {
     "chalk": "^2.3.0",
     "glob": "^7.1.2",
-    "sergeant": "^16.0.1",
+    "sergeant": "^16.1.0",
     "thenify": "^3.3.0"
   },
   "devDependencies": {
