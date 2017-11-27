@@ -16,19 +16,22 @@ command('ghost-hunter', function ({option, parameter}) {
 
   parameter('files', {
     description: 'A glob to your code',
-    required: true
+    required: true,
+    multiple: true
   })
 
   option('base', {
     description: 'What to resolve source map files against',
-    default: process.cwd()
+    default: '.'
   })
 
   return function (args) {
     return Promise.all([
       readFile(args.sourcemap).then((sourcemap) => JSON.parse(sourcemap)),
-      glob(args.files).then((files) => files.map((file) => path.resolve(file)))
+      Promise.all(args.files.map((files) => glob(files, {nodir: true})))
     ]).then(function ([sourcemap, files]) {
+      files = files.reduce((files, current) => files.concat(current.map((file) => path.resolve(file))), [])
+
       const sources = sourcemap.sources.map((file) => path.resolve(args.base, file))
 
       files.forEach(function (file) {
