@@ -22,7 +22,7 @@ command('ghost-hunter', function ({option, parameter}) {
 
   option('base', {
     description: 'What to resolve source map files against',
-    default: '.'
+    default: { value: '.' }
   })
 
   return function (args) {
