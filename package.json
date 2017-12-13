@@ -3,12 +3,11 @@
   "version": "2.2.0",
   "description": "Find unused files using a sourcemap",
   "bin": {
-    "ghost-hunter": "./index.js"
+    "ghost-hunter": "./cli.js"
   },
   "main": "index.js",
   "scripts": {
-    "test": "standard && tape 'test.js' | faucet",
-    "cover": "nyc --reporter=html npm test"
+    "test": "standard && tape 'test.js'"
   },
   "repository": {
     "type": "git",
@@ -24,9 +23,6 @@
     "thenify": "^3.3.0"
   },
   "devDependencies": {
-    "faucet": "0.0.1",
-    "mockery": "^2.0.0",
-    "nyc": "^11.3.0",
     "standard": "^10.0.3",
     "tape": "^4.8.0"
   }
