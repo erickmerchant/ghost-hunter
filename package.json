@@ -23,6 +23,7 @@
     "thenify": "^3.3.0"
   },
   "devDependencies": {
+    "execa": "^0.8.0",
     "standard": "^10.0.3",
     "tape": "^4.8.0"
   }
