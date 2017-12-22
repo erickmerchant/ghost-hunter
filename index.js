@@ -1,10 +1,15 @@
 const chalk = require('chalk')
 const path = require('path')
+const assert = require('assert')
 const thenify = require('thenify')
 const glob = thenify(require('glob'))
 const readFile = thenify(require('fs').readFile)
 
 module.exports = function (deps) {
+  assert.ok(deps.error)
+
+  assert.equal(typeof deps.error.write, 'function')
+
   return function ({option, parameter}) {
     parameter('sourcemap', {
       description: 'The sourcemap',
