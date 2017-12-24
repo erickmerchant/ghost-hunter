@@ -9,8 +9,8 @@ const noopDeps = {
   }
 }
 const noopDefiners = {
-  parameter: () => {},
-  option: () => {}
+  parameter () {},
+  option () {}
 }
 
 test('index.js - options and parameters', function (t) {
@@ -20,10 +20,10 @@ test('index.js - options and parameters', function (t) {
   const options = {}
 
   require('./index')(noopDeps)({
-    parameter: (name, args) => {
+    parameter (name, args) {
       parameters[name] = args
     },
-    option: (name, args) => {
+    option (name, args) {
       options[name] = args
     }
   })
@@ -59,7 +59,7 @@ test('index.js - no output', function (t) {
     files: ['fixtures/no-output/src/*.js'],
     base: 'fixtures/no-output/'
   })
-  .then(() => {
+  .then(function () {
     t.deepEqual([], messages)
   })
 })
@@ -80,7 +80,7 @@ test('index.js - output', function (t) {
     files: ['fixtures/output/src/*.js'],
     base: 'fixtures/output/'
   })
-  .then(() => {
+  .then(function () {
     t.deepEqual([chalk.red(path.join(process.cwd(), 'fixtures/output/src/c.js')) + '\n'], messages)
   })
 })
