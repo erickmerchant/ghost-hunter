@@ -59,9 +59,9 @@ test('index.js - no output', function (t) {
     files: ['fixtures/no-output/src/*.js'],
     base: 'fixtures/no-output/'
   })
-  .then(function () {
-    t.deepEqual([], messages)
-  })
+    .then(function () {
+      t.deepEqual([], messages)
+    })
 })
 
 test('index.js - output', function (t) {
@@ -80,9 +80,9 @@ test('index.js - output', function (t) {
     files: ['fixtures/output/src/*.js'],
     base: 'fixtures/output/'
   })
-  .then(function () {
-    t.deepEqual([chalk.red(path.join(process.cwd(), 'fixtures/output/src/c.js')) + '\n'], messages)
-  })
+    .then(function () {
+      t.deepEqual([chalk.red(path.join(process.cwd(), 'fixtures/output/src/c.js')) + '\n'], messages)
+    })
 })
 
 test('cli.js', async function (t) {
