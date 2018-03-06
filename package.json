@@ -17,9 +17,9 @@
   "author": "Erick Merchant <erickmerchant@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "chalk": "^2.3.1",
+    "chalk": "^2.3.2",
     "glob": "^7.1.2",
-    "sergeant": "^17.2.3",
+    "sergeant": "^17.2.4",
     "thenify": "^3.3.0"
   },
   "devDependencies": {
