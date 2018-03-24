@@ -31,9 +31,10 @@ module.exports = function (deps) {
       return Promise.all([
         readFile(args.sourcemap).then((sourcemap) => JSON.parse(sourcemap)),
         Promise.all(args.files.map((files) => glob(files, {nodir: true})))
+          .then(function (files) {
+            return files.reduce((files, current) => files.concat(current.map((file) => path.resolve(file))), [])
+          })
       ]).then(function ([sourcemap, files]) {
-        files = files.reduce((files, current) => files.concat(current.map((file) => path.resolve(file))), [])
-
         const sources = sourcemap.sources.map((file) => path.resolve(args.base, file))
 
         files.forEach(function (file) {
