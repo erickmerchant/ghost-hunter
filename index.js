@@ -37,11 +37,11 @@ module.exports = function (deps) {
       ]).then(function ([sourcemap, files]) {
         const sources = sourcemap.sources.map((file) => path.resolve(args.base, file))
 
-        files.forEach(function (file) {
+        for (let file of files) {
           if (!sources.includes(file)) {
             deps.error.write(chalk.red(file) + '\n')
           }
-        })
+        }
       })
     }
   }
