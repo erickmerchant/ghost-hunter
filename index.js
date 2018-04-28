@@ -24,8 +24,9 @@ module.exports = function (deps) {
 
     option('base', {
       description: 'What to resolve source map files against',
-      default: '.',
       type: function directory (val) {
+        if (val == null) return '.'
+
         return val
       }
     })

@@ -40,7 +40,7 @@ test('index.js - options and parameters', function (t) {
 
   t.ok(options.base)
 
-  t.equal(options.base.default, '.')
+  t.equal(options.base.type(), '.')
 })
 
 test('index.js - no output', function (t) {
