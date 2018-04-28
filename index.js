@@ -24,7 +24,10 @@ module.exports = function (deps) {
 
     option('base', {
       description: 'What to resolve source map files against',
-      default: { value: '.' }
+      default: '.',
+      type: function directory (val) {
+        return val
+      }
     })
 
     return function (args) {
