@@ -1,9 +1,9 @@
 const chalk = require('chalk')
 const path = require('path')
 const assert = require('assert')
-const thenify = require('thenify')
-const glob = thenify(require('glob'))
-const readFile = thenify(require('fs').readFile)
+const promisify = require('util').promisify
+const glob = promisify(require('glob'))
+const readFile = promisify(require('fs').readFile)
 
 module.exports = function (deps) {
   assert.ok(deps.error)
