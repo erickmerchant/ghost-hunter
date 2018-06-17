@@ -19,7 +19,7 @@
   "dependencies": {
     "chalk": "^2.4.1",
     "glob": "^7.1.2",
-    "sergeant": "^20.0.0"
+    "sergeant": "^20.1.0"
   },
   "devDependencies": {
     "execa": "^0.10.0",
