@@ -3,46 +3,6 @@ const execa = require('execa')
 const chalk = require('chalk')
 const path = require('path')
 
-const noopDeps = {
-  error: {
-    write () {}
-  }
-}
-const noopDefiners = {
-  parameter () {},
-  option () {}
-}
-
-test('index.js - options and parameters', function (t) {
-  t.plan(7)
-
-  const parameters = {}
-  const options = {}
-
-  require('./index')(noopDeps)({
-    parameter (name, args) {
-      parameters[name] = args
-    },
-    option (name, args) {
-      options[name] = args
-    }
-  })
-
-  t.ok(parameters.sourcemap)
-
-  t.equal(parameters.sourcemap.required, true)
-
-  t.ok(parameters.files)
-
-  t.equal(parameters.files.required, true)
-
-  t.equal(parameters.files.multiple, true)
-
-  t.ok(options.base)
-
-  t.equal(options.base.type(), '.')
-})
-
 test('index.js - no output', function (t) {
   t.plan(1)
 
@@ -54,7 +14,7 @@ test('index.js - no output', function (t) {
         messages.push(line)
       }
     }
-  })(noopDefiners)({
+  })({
     sourcemap: 'fixtures/no-output/bundle.js.map',
     files: ['fixtures/no-output/src/*.js'],
     base: 'fixtures/no-output/'
@@ -75,7 +35,7 @@ test('index.js - output', function (t) {
         messages.push(line)
       }
     }
-  })(noopDefiners)({
+  })({
     sourcemap: 'fixtures/output/bundle.js.map',
     files: ['fixtures/output/src/*.js'],
     base: 'fixtures/output/'
