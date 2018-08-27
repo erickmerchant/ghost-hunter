@@ -18,8 +18,8 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.4.1",
-    "glob": "^7.1.2",
-    "sergeant": "^22.0.0"
+    "glob": "^7.1.3",
+    "sergeant": "^22.0.1"
   },
   "devDependencies": {
     "execa": "^1.0.0",
