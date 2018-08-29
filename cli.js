@@ -3,7 +3,7 @@
 const command = require('sergeant')
 const hunter = require('./index')
 
-command('ghost-hunter', ({option, parameter}) => {
+command('ghost-hunter', ({ option, parameter }) => {
   parameter('sourcemap', {
     description: 'The sourcemap',
     required: true
@@ -22,5 +22,5 @@ command('ghost-hunter', ({option, parameter}) => {
     }
   })
 
-  return (args) => hunter({error: process.stderr})(args)
+  return (args) => hunter({ error: process.stderr })(args)
 })(process.argv.slice(2))
