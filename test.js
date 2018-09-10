@@ -3,12 +3,12 @@ const execa = require('execa')
 const chalk = require('chalk')
 const path = require('path')
 
-test('index.js - no output', function (t) {
+test('index.js - no output', async (t) => {
   t.plan(1)
 
   const messages = []
 
-  require('./index')({
+  await require('./index')({
     error: {
       write (line) {
         messages.push(line)
@@ -19,17 +19,16 @@ test('index.js - no output', function (t) {
     files: ['fixtures/no-output/src/*.js'],
     base: 'fixtures/no-output/'
   })
-    .then(function () {
-      t.deepEqual([], messages)
-    })
+
+  t.deepEqual([], messages)
 })
 
-test('index.js - output', function (t) {
+test('index.js - output', async (t) => {
   t.plan(1)
 
   const messages = []
 
-  require('./index')({
+  await require('./index')({
     error: {
       write (line) {
         messages.push(line)
@@ -40,12 +39,11 @@ test('index.js - output', function (t) {
     files: ['fixtures/output/src/*.js'],
     base: 'fixtures/output/'
   })
-    .then(function () {
-      t.deepEqual([chalk.red(path.join(process.cwd(), 'fixtures/output/src/c.js')) + '\n'], messages)
-    })
+
+  t.deepEqual([chalk.red(path.join(process.cwd(), 'fixtures/output/src/c.js')) + '\n'], messages)
 })
 
-test('cli.js', async function (t) {
+test('cli.js', async (t) => {
   t.plan(4)
 
   try {
