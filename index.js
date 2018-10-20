@@ -22,7 +22,7 @@ module.exports = (deps) => {
 
     const sources = sourcemap.sources.map((file) => path.resolve(args.base, file))
 
-    for (let file of files) {
+    for (const file of files) {
       if (!sources.includes(file)) {
         deps.error.write(chalk.red(file) + '\n')
       }
