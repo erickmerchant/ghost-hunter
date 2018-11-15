@@ -5,7 +5,6 @@
   "bin": {
     "ghost-hunter": "./cli.js"
   },
-  "main": "index.js",
   "scripts": {
     "test": "standard && tape test.js"
   },
