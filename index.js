@@ -1,4 +1,4 @@
-const chalk = require('chalk')
+const kleur = require('kleur')
 const path = require('path')
 const assert = require('assert')
 const promisify = require('util').promisify
@@ -24,7 +24,7 @@ module.exports = (deps) => {
 
     for (const file of files) {
       if (!sources.includes(file)) {
-        deps.error.write(chalk.red(file) + '\n')
+        deps.error.write(kleur.red(file) + '\n')
       }
     }
   }
