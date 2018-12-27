@@ -40,7 +40,7 @@ test('index.js - output', async (t) => {
     base: 'fixtures/output/'
   })
 
-  t.deepEqual([kleur.red(path.join(process.cwd(), 'fixtures/output/src/c.js')) + '\n'], messages)
+  t.deepEqual([`${ kleur.red(path.join(process.cwd(), 'fixtures/output/src/c.js')) }\n`], messages)
 })
 
 test('cli.js', async (t) => {

@@ -15,16 +15,14 @@ module.exports = (deps) => {
     const [sourcemap, files] = await Promise.all([
       streamPromise(createReadStream(args.sourcemap)).then((sourcemap) => JSON.parse(sourcemap)),
       Promise.all(args.files.map((files) => glob(files, { nodir: true })))
-        .then((files) => {
-          return files.reduce((files, current) => files.concat(current.map((file) => path.resolve(file))), [])
-        })
+        .then((files) => files.reduce((files, current) => files.concat(current.map((file) => path.resolve(file))), []))
     ])
 
     const sources = sourcemap.sources.map((file) => path.resolve(args.base, file))
 
     for (const file of files) {
       if (!sources.includes(file)) {
-        deps.error.write(kleur.red(file) + '\n')
+        deps.error.write(`${ kleur.red(file) }\n`)
       }
     }
   }
