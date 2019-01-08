@@ -10,7 +10,7 @@ test('index.js - no output', async (t) => {
 
   await require('./index')({
     error: {
-      write (line) {
+      write(line) {
         messages.push(line)
       }
     }
@@ -30,7 +30,7 @@ test('index.js - output', async (t) => {
 
   await require('./index')({
     error: {
-      write (line) {
+      write(line) {
         messages.push(line)
       }
     }

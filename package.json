@@ -6,7 +6,8 @@
     "ghost-hunter": "./cli.js"
   },
   "scripts": {
-    "test": "lint '**/*.js' '!fixtures' && tape test.js"
+    "pretest": "lint '**/*.js' '!fixtures'",
+    "test": "tape test.js"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,7 @@
     "stream-to-promise": "^2.2.0"
   },
   "devDependencies": {
-    "@erickmerchant/lint": "^1.5.1",
+    "@erickmerchant/lint": "^1.6.0",
     "execa": "^1.0.0",
     "tape": "^4.9.2"
   }

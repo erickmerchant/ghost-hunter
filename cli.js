@@ -17,7 +17,7 @@ command('ghost-hunter', ({option, parameter}) => {
 
   option('base', {
     description: 'A directory to resolve source map files against',
-    type (val = '.') {
+    type(val = '.') {
       return val
     }
   })
