@@ -1,6 +1,6 @@
 const test = require('tape')
 const execa = require('execa')
-const kleur = require('kleur')
+const {red} = require('kleur')
 const path = require('path')
 
 test('index.js - no output', async (t) => {
@@ -40,7 +40,7 @@ test('index.js - output', async (t) => {
     base: 'fixtures/output/'
   })
 
-  t.deepEqual([`${kleur.red(path.join(process.cwd(), 'fixtures/output/src/c.js'))}\n`], messages)
+  t.deepEqual([`${red(path.join(process.cwd(), 'fixtures/output/src/c.js'))}\n`], messages)
 })
 
 test('cli.js', async (t) => {
