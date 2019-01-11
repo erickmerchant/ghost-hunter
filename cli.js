@@ -19,7 +19,8 @@ command('ghost-hunter', ({option, parameter}) => {
     description: 'A directory to resolve source map files against',
     type(val = '.') {
       return val
-    }
+    },
+    alias: 'b'
   })
 
   return (args) => hunter({error: process.stderr})(args)
