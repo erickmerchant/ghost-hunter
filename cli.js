@@ -3,7 +3,7 @@
 const command = require('sergeant')
 const hunter = require('./index')
 
-command('ghost-hunter', ({option, parameter}) => {
+command('ghost-hunter', 'find unused files using a sourcemap', ({option, parameter}) => {
   parameter('sourcemap', {
     description: 'The sourcemap',
     required: true
