@@ -9,8 +9,8 @@ test('index.js - no output', async (t) => {
   const messages = []
 
   await require('./index')({
-    error: {
-      write(line) {
+    console: {
+      error(line) {
         messages.push(line)
       }
     }
@@ -29,8 +29,8 @@ test('index.js - output', async (t) => {
   const messages = []
 
   await require('./index')({
-    error: {
-      write(line) {
+    console: {
+      error(line) {
         messages.push(line)
       }
     }
@@ -40,7 +40,7 @@ test('index.js - output', async (t) => {
     base: 'fixtures/output/'
   })
 
-  t.deepEqual([`${red(path.join(process.cwd(), 'fixtures/output/src/c.js'))}\n`], messages)
+  t.deepEqual([`${red(path.join(process.cwd(), 'fixtures/output/src/c.js'))}`], messages)
 })
 
 test('cli.js', async (t) => {
