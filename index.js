@@ -9,7 +9,11 @@ module.exports = ({console}) => async (args) => {
   const [sourcemap, files] = await Promise.all([
     streamPromise(createReadStream(args.sourcemap)).then((sourcemap) => JSON.parse(sourcemap)),
     Promise.all(args.files.map((files) => glob(files, {nodir: true})))
-      .then((files) => files.reduce((files, current) => files.concat(current.map((file) => path.resolve(file))), []))
+      .then((files) => files.reduce((files, current) => {
+        files.push(...current.map((file) => path.resolve(file)))
+
+        return files
+      }, []))
   ])
 
   const sources = sourcemap.sources.map((file) => path.resolve(args.base, file))
