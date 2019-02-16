@@ -23,7 +23,7 @@
     "stream-to-promise": "^2.2.0"
   },
   "devDependencies": {
-    "@erickmerchant/lint": "^1.10.1",
+    "@erickmerchant/lint": "^1.10.2",
     "execa": "^1.0.0",
     "tape": "^4.10.0"
   }
