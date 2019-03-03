@@ -1,6 +1,6 @@
 {
   "name": "ghost-hunter",
-  "version": "4.1.1",
+  "version": "4.2.0",
   "description": "Find unused files using a sourcemap",
   "bin": {
     "ghost-hunter": "./cli.js"
