@@ -17,7 +17,6 @@
   "author": "Erick Merchant <erickmerchant@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "eslint": "^5.15.0",
     "glob": "^7.1.3",
     "kleur": "^3.0.2",
     "sergeant": "^24.1.3",
@@ -25,6 +24,7 @@
   },
   "devDependencies": {
     "@erickmerchant/lint": "^2.0.1",
+    "eslint": "^5.15.0",
     "execa": "^1.0.0",
     "tape": "^4.10.0"
   }
