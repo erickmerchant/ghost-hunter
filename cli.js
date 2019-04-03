@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const command = require('sergeant')
-const hunter = require('./index')
+const hunter = require('./main.js')
 
 command('ghost-hunter', 'find unused files using a sourcemap', ({option, parameter}) => {
   parameter('sourcemap', {

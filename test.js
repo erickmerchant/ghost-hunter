@@ -3,12 +3,12 @@ const execa = require('execa')
 const {red} = require('kleur')
 const path = require('path')
 
-test('index.js - no output', async (t) => {
+test('main.js - no output', async (t) => {
   t.plan(1)
 
   const messages = []
 
-  await require('./index')({
+  await require('./main.js')({
     console: {
       error(line) {
         messages.push(line)
@@ -23,12 +23,12 @@ test('index.js - no output', async (t) => {
   t.deepEqual([], messages)
 })
 
-test('index.js - output', async (t) => {
+test('main.js - output', async (t) => {
   t.plan(1)
 
   const messages = []
 
-  await require('./index')({
+  await require('./main.js')({
     console: {
       error(line) {
         messages.push(line)
