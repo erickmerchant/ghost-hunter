@@ -1,21 +1,26 @@
 #!/usr/bin/env node
 
-const command = require('sergeant')
+const {command, start} = require('sergeant')('ghost-hunter')
 const hunter = require('./main.js')
 
-command('ghost-hunter', 'find unused files using a sourcemap', ({option, parameter}) => {
-  parameter('sourcemap', {
+command(({option, parameter, description}) => {
+  description('find unused files using a sourcemap')
+
+  parameter({
+    name: 'sourcemap',
     description: 'The sourcemap',
     required: true
   })
 
-  parameter('files', {
+  parameter({
+    name: 'files',
     description: 'A glob to your code',
     required: true,
     multiple: true
   })
 
-  option('base', {
+  option({
+    name: 'base',
     description: 'A directory to resolve source map files against',
     type(val = '.') {
       return val
@@ -24,4 +29,6 @@ command('ghost-hunter', 'find unused files using a sourcemap', ({option, paramet
   })
 
   return (args) => hunter({error: process.stderr})(args)
-})(process.argv.slice(2))
+})
+
+start(process.argv.slice(2))
