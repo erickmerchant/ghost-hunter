@@ -16,7 +16,7 @@ test('main.js - no output', async (t) => {
     }
   })({
     sourcemap: 'fixtures/no-output/bundle.js.map',
-    files: ['fixtures/no-output/src/*.js'],
+    file: ['fixtures/no-output/src/*.js'],
     base: 'fixtures/no-output/'
   })
 
@@ -36,7 +36,7 @@ test('main.js - output', async (t) => {
     }
   })({
     sourcemap: 'fixtures/output/bundle.js.map',
-    files: ['fixtures/output/src/*.js'],
+    file: ['fixtures/output/src/*.js'],
     base: 'fixtures/output/'
   })
 

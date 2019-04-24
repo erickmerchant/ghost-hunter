@@ -8,13 +8,13 @@ command(({option, parameter, description}) => {
 
   parameter({
     name: 'sourcemap',
-    description: 'The sourcemap',
+    description: 'the sourcemap',
     required: true
   })
 
   parameter({
-    name: 'files',
-    description: 'A glob to your code',
+    name: 'file',
+    description: 'a file to check',
     required: true,
     multiple: true
   })
@@ -28,7 +28,7 @@ command(({option, parameter, description}) => {
     alias: 'b'
   })
 
-  return (args) => hunter({error: process.stderr})(args)
+  return (args) => hunter({console})(args)
 })
 
 start(process.argv.slice(2))
