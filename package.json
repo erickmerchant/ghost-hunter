@@ -20,7 +20,6 @@
     "glob": "^7.1.6",
     "kleur": "^3.0.3",
     "sergeant": "^26.1.3",
-    "standard": "^14.3.3",
     "stream-to-promise": "^2.2.0"
   },
   "devDependencies": {
